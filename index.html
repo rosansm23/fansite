@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosan fansite</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- BALK BOVENAAN -->
+    <header class="balk">
+      <h1>Rosan fansite</h1>
+    </header>
+
+    <main>
+      <!-- INTRO: tekst links, plaatje rechts -->
+      <section class="intro">
+        <div class="intro-tekst">
+          <h2>Welkom!</h2>
+          <p>
+            Ik ben fan van coldplay sinds ik 6 was, toen nog op de cd speler
+            luisteren. Ik ben in 2022 naar het concert geweest in
+            <strong>Berlijn</strong> in het olympiastadion.
+          </p>
+          <p>
+            Mijn favoriete album is Viva la Vida or death and all his friends.
+          </p>
+        </div>
+
+        <!-- Zet je eigen plaatje in dezelfde map en noem het coldplayband.jpg -->
+        <img class="intro-plaatje" src="coldplayband.jpg" alt="Coldplay" />
+      </section>
+
+      <!-- BANDLEDEN -->
+      <section class="bandleden">
+        <h2>De bandleden</h2>
+
+        <div class="blokjes">
+          <article class="blokje">
+            <img src="chris.png" alt="Chris Martin" />
+            <h3>Chris Martin</h3>
+            <p>Zanger, pianist en gitarist.</p>
+            <p class="meer">Schrijf hier jouw uitleg over Chris.</p>
+          </article>
+
+          <article class="blokje">
+            <img src="jon.png" alt="Jonny Buckland" />
+            <h3>Jonny Buckland</h3>
+            <p>Gitarist.</p>
+            <p class="meer">Schrijf hier jouw uitleg over Jonny.</p>
+          </article>
+
+          <article class="blokje">
+            <img src="guy.png" alt="Guy Berryman" />
+            <h3>Guy Berryman</h3>
+            <p>Bassist.</p>
+            <p class="meer">Schrijf hier jouw uitleg over Guy.</p>
+          </article>
+
+          <article class="blokje">
+            <img src="will.png" alt="Will Champion" />
+            <h3>Will Champion</h3>
+            <p>Drummer.</p>
+            <p class="meer">Schrijf hier jouw uitleg over Will.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOTOGALERIJ: mijn eigen foto's van het concert -->
+    <section class="galerij">
+      <h2>Mijn concertfoto's</h2>
+      <p>Klik op een foto om hem groter te bekijken.</p>
+
+      <div class="galerij-grid">
+        <img src="concert1.png" alt="Foto van het concert 1">
+        <img src="concert2.png" alt="Foto van het concert 2">
+        <img src="concert3.png" alt="Foto van het concert 3">
+        <img src="concert4.png" alt="Foto van het concert 4">
+        <img src="concert5.png" alt="Foto van het concert 5">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Grote weergave van een foto (is eerst verborgen) -->
+  <div class="groot" id="groot">
+    <span class="sluiten" id="sluiten">&times;</span>
+    <img id="groot-plaatje" src="" alt="Grote foto">
+  </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

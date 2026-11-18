@@ -1,0 +1,186 @@
+/* ---------- KLEUREN ----------
+   Verander hier de kleuren van je hele site.
+   Je hoeft ze maar op één plek aan te passen. */
+:root {
+  --achtergrond: #edc8ff;
+  --balk: #2b2d42;
+  --tekst: #222222;
+  --blokje: #ffffff;
+  --accent: #d043ff;
+}
+
+/* ---------- BASIS ---------- */
+* {
+  box-sizing: border-box;   /* maakt rekenen met breedtes makkelijker */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--achtergrond);
+  color: var(--tekst);
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;           /* zet de inhoud in het midden */
+  padding: 20px;
+}
+
+/* ---------- BALK BOVENAAN ---------- */
+.balk {
+  background: var(--balk);
+  padding: 20px;
+  text-align: center;
+}
+
+.balk h1 {
+  margin: 0;
+}
+.balk {
+  /* Meerdere ronde kleurvlekken die over een gewone gradient heen liggen */
+  background:
+    radial-gradient(circle at 15% 50%, #7df8ff 0%, transparent 40%),
+    radial-gradient(circle at 50% 0%, #df61ff 0%, transparent 45%),
+    radial-gradient(circle at 85% 60%, #ff3ae1 0%, transparent 40%),
+    linear-gradient(90deg, #2b2d42, #5f4b8b);
+
+  color: white;
+  padding: 25px;
+  text-align: center;
+
+  /* Afgeronde onderkant, met een andere ronding links en rechts */
+  border-radius: 0 0 40px 40px;
+}
+
+/* ---------- INTRO: tekst links, plaatje rechts ---------- */
+.intro {
+  display: flex;            /* zet tekst en plaatje naast elkaar */
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.intro-tekst {
+  flex: 1;                  /* tekst en plaatje krijgen evenveel ruimte */
+}
+
+.intro-plaatje {
+  flex: 1;
+  width: 50%;
+  border-radius: 10px;
+}
+
+/* ---------- BANDLEDEN ---------- */
+.blokjes {
+  display: grid;
+  /* 4 blokjes naast elkaar, op smallere schermen automatisch minder */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.blokje {
+  background: var(--blokje);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.blokje img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;        /* foto's worden mooi bijgesneden, niet uitgerekt */
+  border-radius: 8px;
+}
+
+.blokje h3 {
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+/* Extra uitleg is eerst verborgen; JavaScript laat hem zien bij een klik */
+.meer {
+  display: none;
+}
+
+.meer.zichtbaar {
+  display: block;
+}
+
+
+/* ---------- FOTOGALERIJ ---------- */
+.galerij {
+  margin-top: 40px;
+  margin-left:40px;
+  margin-right:40px;
+  margin-bottom: 80px;
+}
+
+.galerij-grid {
+  display: grid;
+  /* 3 foto's naast elkaar, op smallere schermen automatisch minder */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.galerij-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;        /* foto's worden bijgesneden, niet uitgerekt */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Foto wordt een beetje groter als je er met de muis op staat */
+.galerij-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Grote weergave: bedekt het hele scherm */
+.groot {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.groot.open {
+  display: flex;
+}
+
+.groot img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.sluiten {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------- MOBIEL ---------- */
+/* Op schermen smaller dan 700px komt het plaatje onder de tekst */
+@media (max-width: 700px) {
+  .intro {
+    flex-direction: column;
+  }
+
+  .intro-plaatje {
+    width: 100%;
+  }
+}
